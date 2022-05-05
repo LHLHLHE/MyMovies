@@ -14,6 +14,11 @@
     <string name="description">Description:</string>
     <string name="title">Title:</string>
     <string name="add_to_favourite">\"Add to Favorites\" button</string>
+    <string name="already_have_account">I already have an account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 
     <string-array name="methods_of_sort">
         <item>Most popular</item>

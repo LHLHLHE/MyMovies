@@ -9,4 +9,10 @@
         android:enabled="true"
         app:showAsAction="ifRoom"/>
 
+    <item
+        android:title="Sign Out"
+        android:id="@+id/itemSignOut"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
 </menu>

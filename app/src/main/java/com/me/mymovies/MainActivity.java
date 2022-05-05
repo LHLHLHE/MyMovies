@@ -28,6 +28,7 @@ import android.widget.TextView;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.me.mymovies.adapters.MovieAdapter;
 import com.me.mymovies.data.MainViewModel;
 import com.me.mymovies.data.Movie;
@@ -42,6 +43,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONObject> {
+
+    private FirebaseAuth mAuth;
 
     private RecyclerView recyclerViewPosters;
     private MovieAdapter movieAdapter;
@@ -73,14 +76,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.itemMain:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                break;
             case R.id.itemFavourite:
                 Intent intentToFavourite = new Intent(this, FavouriteActivity.class);
                 startActivity(intentToFavourite);
                 break;
+            case R.id.itemSignOut:
+                mAuth.signOut();
+                signOut();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
         lang = Locale.getDefault().getLanguage();
         spinner = findViewById(R.id.spinner);
         progressBarLoading = findViewById(R.id.progressBarLoading);
@@ -154,6 +157,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
             }
         });
+         if (mAuth.getCurrentUser() == null) {
+             signOut();
+         }
     }
 
     public void onClickSetPopularity(View view) {
@@ -222,5 +228,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(@NonNull Loader<JSONObject> loader) {
 
+    }
+
+    private void signOut() {
+        Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+        startActivity(intent);
     }
 }

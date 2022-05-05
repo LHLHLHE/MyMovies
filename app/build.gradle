@@ -27,6 +27,8 @@ android {
     }
 }
 
+apply plugin: 'com.google.gms.google-services'
+
 dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -76,4 +78,15 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation "androidx.room:room-paging:2.5.0-alpha01"
+
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+
+    // Declare the dependency for the Cloud Firestore library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-firestore'
+
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 }
