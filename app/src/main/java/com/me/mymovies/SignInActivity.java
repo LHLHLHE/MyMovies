@@ -14,10 +14,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db;
+    private DatabaseReference users;
 
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -28,6 +32,8 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        users = db.getReference("Users");
         editTextEmail = findViewById(R.id.editTextEmailSignIn);
         editTextPassword = findViewById(R.id.editTextPasswordSignIn);
         textViewSignUp = findViewById(R.id.textViewSignUp);

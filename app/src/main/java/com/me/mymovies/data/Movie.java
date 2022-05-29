@@ -19,6 +19,9 @@ public class Movie {
     private double voteAverage;
     private String releaseDate;
 
+    // required for firebase database
+    public Movie() {}
+
     public Movie(
             int uniqueId,
             int id,

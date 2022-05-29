@@ -25,13 +25,16 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.me.mymovies.adapters.MovieAdapter;
 import com.me.mymovies.data.MainViewModel;
 import com.me.mymovies.data.Movie;
+import com.me.mymovies.data.User;
 import com.me.mymovies.utils.JSONUtils;
 import com.me.mymovies.utils.NetworkUtils;
 
@@ -45,6 +48,8 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONObject> {
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db;
+    private DatabaseReference users;
 
     private RecyclerView recyclerViewPosters;
     private MovieAdapter movieAdapter;
@@ -99,6 +104,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        users = db.getReference("Users");
         lang = Locale.getDefault().getLanguage();
         spinner = findViewById(R.id.spinner);
         progressBarLoading = findViewById(R.id.progressBarLoading);
@@ -149,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                
+
             }
 
             @Override
@@ -157,9 +164,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
             }
         });
-         if (mAuth.getCurrentUser() == null) {
-             signOut();
-         }
+        if (mAuth.getCurrentUser() == null) {
+            signOut();
+        }
     }
 
     public void onClickSetPopularity(View view) {

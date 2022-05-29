@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1735" />
+        <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2555" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3225" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout-land/activity_detail.xml" value="0.31084656084656087" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_detail.xml" value="0.22240802675585283" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_favourite.xml" value="0.276268115942029" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_sign_in.xml" value="0.16666666666666666" />
-        <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/activity_sign_up.xml" value="0.14666666666666667" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/movie_info.xml" value="0.3671875" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/movie_item.xml" value="0.3671875" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/layout/navigation_item.xml" value="0.22" />
@@ -20,6 +22,7 @@
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/menu/favourites_menu.xml" value="0.18854166666666666" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/menu/main_menu.xml" value="0.3671875" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/menu/navigation_menu.xml" value="0.3671875" />
+        <entry key="..\:/mobilki/MyMovies/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1965" />
       </map>
     </option>
   </component>

@@ -2,6 +2,8 @@ package com.me.mymovies;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +34,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class DetailActivity extends AppCompatActivity {
@@ -154,11 +157,14 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setFavourite() {
-        favouriteMovie = viewModel.getFavouriteMovieById(id);
-        if (favouriteMovie == null) {
-            imageViewAddToFavourite.setImageResource(R.drawable.favourite_add_to);
-        } else {
-            imageViewAddToFavourite.setImageResource(R.drawable.favourite_remove);
-        }
+        LiveData<List<FavouriteMovie>> favouriteMovies = viewModel.getFavouritesLiveData();
+        favouriteMovies.observe(this, favouriteMovies1 -> {
+            favouriteMovie = viewModel.getFavouriteMovieById(id);
+            if (favouriteMovie == null) {
+                imageViewAddToFavourite.setImageResource(R.drawable.favourite_add_to);
+            } else {
+                imageViewAddToFavourite.setImageResource(R.drawable.favourite_remove);
+            }
+        });
     }
 }
