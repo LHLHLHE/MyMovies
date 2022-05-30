@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     private void signOut() {
-        Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+        Intent intent = new Intent(MainActivity.this, SignInActivity.class);
         startActivity(intent);
     }
 }

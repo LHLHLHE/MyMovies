@@ -16,7 +16,7 @@
     <string name="title">Название:</string>
     <string name="add_to_favourite">Кнопка \"Добавить в Избранное\"</string>
     <string name="already_have_account">У меня уже есть аккаунт</string>
-    <string name="sign_up">Зарегестрироваться</string>
+    <string name="sign_up">Зарегистрироваться</string>
     <string name="sign_in">Войти</string>
     <string name="email">Эл. Почта</string>
     <string name="password">Пароль</string>
