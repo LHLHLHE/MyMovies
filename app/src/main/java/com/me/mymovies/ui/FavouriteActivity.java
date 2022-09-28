@@ -1,4 +1,4 @@
-package com.me.mymovies;
+package com.me.mymovies.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +13,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.me.mymovies.R;
 import com.me.mymovies.adapters.MovieAdapter;
 import com.me.mymovies.data.FavouriteMovie;
-import com.me.mymovies.data.MainViewModel;
 import com.me.mymovies.data.Movie;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class FavouriteActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewFavouriteMovies;
     private MovieAdapter adapter;
-    private MainViewModel viewModel;
+    private FavouriteViewModel favouriteViewModel;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,9 +62,8 @@ public class FavouriteActivity extends AppCompatActivity {
         recyclerViewFavouriteMovies.setLayoutManager(new GridLayoutManager(this, 2));
         adapter = new MovieAdapter();
         recyclerViewFavouriteMovies.setAdapter(adapter);
-        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        LiveData<List<FavouriteMovie>> favouriteMovies = viewModel.getFavouritesLiveData();
-        favouriteMovies.observe(this, new Observer<List<FavouriteMovie>>() {
+        favouriteViewModel = new ViewModelProvider(this).get(FavouriteViewModel.class);
+        favouriteViewModel.getFavouritesLiveData().observe(this, new Observer<List<FavouriteMovie>>() {
             @Override
             public void onChanged(List<FavouriteMovie> favouriteMovies) {
                 List<Movie> movies = new ArrayList<>();

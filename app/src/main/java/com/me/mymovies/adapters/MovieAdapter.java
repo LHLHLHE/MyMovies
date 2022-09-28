@@ -21,6 +21,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     private OnPosterClickListener onPosterClickListener;
     private OnReachEndListener onReachEndListener;
 
+    private static final String BASE_POSTER_URL = "https://image.tmdb.org/t/p/";
+    private static final String SMALL_POSTER_SIZE = "w185";
+
     public MovieAdapter() {
         movies = new ArrayList<>();
     }
@@ -57,7 +60,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             onReachEndListener.onReachEnd();
         }
         Movie movie = movies.get(position);
-        Picasso.get().load(movie.getPosterPath()).into(holder.imageViewSmallPoster);
+        Picasso.get().load(BASE_POSTER_URL + SMALL_POSTER_SIZE + movie.getPosterPath()).into(holder.imageViewSmallPoster);
     }
 
     @Override

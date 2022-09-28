@@ -1,14 +1,16 @@
 package com.me.mymovies.data;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Trailer {
 
-    private String key;
+    @SerializedName("name")
+    @Expose
     private String name;
-
-    public Trailer(String key, String name) {
-        this.key = key;
-        this.name = name;
-    }
+    @SerializedName("key")
+    @Expose
+    private String key;
 
     public String getKey() {
         return key;

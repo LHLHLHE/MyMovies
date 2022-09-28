@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dev/Android/MyMovies/app/src/main/res/layout/activity_favourite.xml" value="0.17831813576494426" />
+        <entry key="..\:/Dev/Android/MyMovies/app/src/main/res/layout/activity_sign_in.xml" value="0.1408514492753623" />
+        <entry key="..\:/Dev/Android/MyMovies/app/src/main/res/layout/movie_item.xml" value="0.12182971014492754" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1735" />
         <entry key="..\:/mobilki/MyMovies/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.2555" />

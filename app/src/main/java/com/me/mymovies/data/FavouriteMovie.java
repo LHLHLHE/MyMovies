@@ -4,7 +4,7 @@ package com.me.mymovies.data;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
-@Entity(tableName = "favourite_movies")
+//@Entity(tableName = "favourite_movies")
 public class FavouriteMovie extends Movie {
 
     // required for firebase database
@@ -44,14 +44,14 @@ public class FavouriteMovie extends Movie {
     @Ignore
     public FavouriteMovie(Movie movie) {
         super(
-                movie.getUniqueId(),
+//                movie.getUniqueId(),
                 movie.getId(),
                 movie.getVoteCount(),
                 movie.getTitle(),
                 movie.getOriginalTitle(),
                 movie.getOverview(),
                 movie.getPosterPath(),
-                movie.getBigPosterPath(),
+//                movie.getBigPosterPath(),
                 movie.getBackdropPath(),
                 movie.getVoteAverage(),
                 movie.getReleaseDate()

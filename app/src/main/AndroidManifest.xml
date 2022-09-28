@@ -14,19 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovies">
         <activity
-            android:name=".SignInActivity"
+            android:name=".ui.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".FavouriteActivity"
+            android:name=".ui.FavouriteActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".ui.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

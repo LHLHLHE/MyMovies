@@ -15,8 +15,10 @@ import java.util.ArrayList;
 
 public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder> {
 
-    private ArrayList<Trailer> trailers;
+    private ArrayList<Trailer> trailers = new ArrayList<>();
     private OnTrailerClickListener onTrailerClickListener;
+
+    private static final String BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v=";
 
     @NonNull
     @Override
@@ -51,7 +53,7 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerV
                 @Override
                 public void onClick(View view) {
                     if (onTrailerClickListener != null) {
-                        onTrailerClickListener.onTrailerClick(trailers.get(getAdapterPosition()).getKey());
+                        onTrailerClickListener.onTrailerClick(BASE_YOUTUBE_URL + trailers.get(getAdapterPosition()).getKey());
                     }
                 }
             });
